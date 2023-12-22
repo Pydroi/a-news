@@ -1,0 +1,134 @@
+{% extends "main/base.html" %}
+
+
+{% block title %}
+Home page
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demon Slayer Characters</title>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center center;
+            color: #aa1919;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px;
+        }
+
+
+        .card {
+            background-color: #000000;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            color: #333;
+            margin: 20px;
+            overflow: hidden;
+            position: relative;
+            width: 300px;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+
+
+        .card:before {
+            background-color: rgba(0, 0, 0, 0.4);
+            content: "";
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+
+        .card:hover:before {
+            background-color: rgba(0, 0, 0, 0.2);
+            transition: background-color 0.5s ease-in-out;
+        }
+
+
+        .card:hover .card-text {
+            opacity: 1;
+            top: 50%;
+            transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
+        }
+
+
+        .card-text {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            left: 50%;
+            opacity: 0;
+            position: absolute;
+            text-align: center;
+            top: 70%;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
+            z-index: 2;
+        }
+
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 10px;
+            }
+
+
+            .card {
+                width: calc(50% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" style="background-image: url(https://www.thedigitalfix.com/wp-content/sites/thedigitalfix/2022/12/how-old-is-tanjiro-in-demon-slayer.jpg);">
+            <div class="card-text">Tanjiro Kamado</div>
+        </div>
+       
+        <div class="card" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV383_yodbXmU4vHKeqRhQ-dbPJKq3g8A2Xg&usqp=CAU);">
+            <div class="card-text">Zenitsu Agatsuma</div>
+        </div>
+        <div class="card" style="background-image: url(data:image/jpeg;base64,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);">
+            <div class="card-text">Inosuke Hashibira</div>
+        </div>
+       
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
